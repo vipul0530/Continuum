@@ -1,0 +1,35 @@
+# ── .NET / C# ─────────────────────────────────────────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.vs/
+*.ncrunchproject
+*.DotSettings.user
+publish/
+*.pubxml
+*.pubxml.user
+
+# ── Secrets / config overrides ───────────────────────────────────────────────
+appsettings.Production.json
+secrets.json
+*.pfx
+*.p12
+
+# ── Node / React ──────────────────────────────────────────────────────────────
+node_modules/
+dist/
+.vite/
+
+# ── Environment files ─────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── OS / Editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
