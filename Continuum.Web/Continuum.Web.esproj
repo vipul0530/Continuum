@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0">
+  <PropertyGroup>
+    <!-- Command Visual Studio runs when you press F5 -->
+    <StartupCommand>npm run dev</StartupCommand>
+    <!-- Don't run npm build on every F5 — Vite handles that -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Where VS looks for test files -->
+    <JavaScriptTestRoot>src\</JavaScriptTestRoot>
+  </PropertyGroup>
+</Project>
