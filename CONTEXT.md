@@ -110,7 +110,7 @@ a real-time dashboard to track compliance and at-risk cases.
 
 \- Frontend: React — ALWAYS use .js extensions, NEVER .jsx
 
-\- Database: SQL Server Express (local dev), Azure SQL (production)
+\- Database: SQL Server 2022 Express Edition (local dev), Azure SQL (production)
 
 \- ORM: Entity Framework Core
 
