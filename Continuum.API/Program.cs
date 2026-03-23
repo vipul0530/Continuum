@@ -1,6 +1,7 @@
 using System.Text;
 using Continuum.API.BackgroundJobs;
 using Continuum.API.Data;
+using Continuum.API.DevTools;
 using Continuum.API.Middleware;
 using Continuum.API.Services;
 using Hangfire;
@@ -82,6 +83,10 @@ builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<ITwilioService, TwilioService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<OutreachSchedulerJob>();
+
+// ── React dev server (Development only) ───────────────────────────────────────
+if (builder.Environment.IsDevelopment())
+    builder.Services.AddHostedService<ReactDevServerService>();
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
 builder.Services.AddCors(options =>
