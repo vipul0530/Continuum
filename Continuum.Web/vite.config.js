@@ -4,9 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     react({
-      include: '**/*.js',   // treat all .js files as JSX-capable
+      include: '**/*.js',   // tell Babel plugin to process JSX in .js files
     }),
   ],
+  esbuild: {
+    loader: 'jsx',          // tell Vite's import-analysis to accept JSX in .js files
+    include: /src\/.*\.js$/,
+  },
   optimizeDeps: {
     esbuildOptions: {
       loader: {
