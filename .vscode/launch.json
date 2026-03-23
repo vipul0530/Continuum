@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "▶ API (Continuum.API)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api",
+      "program": "${workspaceFolder}/Continuum.API/bin/Debug/net8.0/Continuum.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Continuum.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "▶ React (Continuum.Web)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}/Continuum.Web",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Local:\\s+(http://\\S+)"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "▶▶ Full Stack (API + React)",
+      "configurations": ["▶ API (Continuum.API)", "▶ React (Continuum.Web)"],
+      "stopAll": true
+    }
+  ]
+}

@@ -33,3 +33,7 @@ Thumbs.db
 *.swp
 *.swo
 .idea/
+
+# ── Claude / project-local ────────────────────────────────────────────────────
+.claude/
+ClaudePrompt.txt
